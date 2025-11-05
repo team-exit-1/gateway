@@ -7,7 +7,6 @@ plugins {
 
 group = "team.exit-1.backend"
 version = "0.0.1-SNAPSHOT"
-description = "Demo project for Spring Boot"
 
 java {
 	toolchain {
