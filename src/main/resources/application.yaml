@@ -8,14 +8,14 @@ spring:
           - id: rag-service
             uri: ${RAG_SERVICE_URL:http://localhost:8082}
             predicates:
-              - Path=/api/node/**
+              - Path=/api/rag/**
             filters:
               - StripPrefix=2
 
           - id: repo-backend-core-service
             uri: ${CORE_SERVICE_URL:http://localhost:8081}
             predicates:
-              - Path=/api/spring/**
+              - Path=/api/core/**
             filters:
               - StripPrefix=2
 
