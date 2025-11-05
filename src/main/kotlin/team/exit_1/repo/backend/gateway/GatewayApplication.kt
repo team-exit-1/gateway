@@ -1,4 +1,4 @@
-package team.exit_1.backend.gateway
+package team.exit_1.repo.backend.gateway
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway
+    name: repo-backend-gateway
   cloud:
     gateway:
       mvc:
@@ -12,7 +12,7 @@ spring:
             filters:
               - StripPrefix=2
 
-          - id: spring-service
+          - id: repo-backend-core-service
             uri: http://localhost:8081
             predicates:
               - Path=/api/spring/**
