@@ -6,14 +6,14 @@ spring:
       mvc:
         routes:
           - id: rag-service
-            uri: http://localhost:3000
+            uri: ${RAG_SERVICE_URL:http://localhost:8082}
             predicates:
               - Path=/api/node/**
             filters:
               - StripPrefix=2
 
           - id: repo-backend-core-service
-            uri: http://localhost:8081
+            uri: ${CORE_SERVICE_URL:http://localhost:8081}
             predicates:
               - Path=/api/spring/**
             filters:
