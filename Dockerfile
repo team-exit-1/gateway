@@ -3,7 +3,7 @@ WORKDIR /app
 COPY build.gradle.kts settings.gradle.kts ./
 COPY gradle ./gradle
 COPY src ./src
-RUN gradle build --no-daemon -x test
+RUN gradle build --no-daemon -x test && rm -rf /root/.kotlin
 
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
