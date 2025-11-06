@@ -12,19 +12,6 @@ import org.springframework.web.filter.OncePerRequestFilter
 @Order(Ordered.HIGHEST_PRECEDENCE)
 class CorsFilter : OncePerRequestFilter() {
 
-    private val allowedOrigins = listOf(
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:8080",
-        "http://localhost:8081",
-        "https://refo-core-hackerton.dsmhs.kr",
-        "https://refo-hackerton.dsmhs.kr",
-        "https://refo-rag-hackerton.dsmhs.kr",
-        "https://refo-llm-hackerton.dsmhs.kr"
-    )
-
     override fun doFilterInternal(
         request: HttpServletRequest,
         response: HttpServletResponse,
@@ -32,7 +19,7 @@ class CorsFilter : OncePerRequestFilter() {
     ) {
         val origin = request.getHeader("Origin")
 
-        if (origin in allowedOrigins) {
+        if (origin != null) {
             response.setHeader("Access-Control-Allow-Origin", origin)
             response.setHeader("Access-Control-Allow-Credentials", "true")
             response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, PATCH")
